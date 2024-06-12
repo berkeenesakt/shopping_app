@@ -16,9 +16,12 @@ class ProductGrid extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            child: Image.asset(
-              product.image,
-              fit: BoxFit.contain,
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Image.asset(
+                product.image,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           Padding(

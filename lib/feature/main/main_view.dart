@@ -29,16 +29,16 @@ class _MainViewState extends State<MainView> {
         }),
         items: [
           SalomonBottomBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: const Icon(Icons.home),
+            title: const Text('Home'),
           ),
           SalomonBottomBarItem(
-            icon: Icon(Icons.favorite),
-            title: Text('Favorites'),
+            icon: const Icon(Icons.favorite),
+            title: const Text('Favorites'),
           ),
           SalomonBottomBarItem(
-            icon: Icon(Icons.shopping_cart),
-            title: Text('Cart'),
+            icon: const Icon(Icons.shopping_cart),
+            title: const Text('Cart'),
           ),
         ],
       ),
