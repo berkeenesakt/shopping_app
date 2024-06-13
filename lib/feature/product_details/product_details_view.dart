@@ -44,7 +44,9 @@ class ProductDetailsView extends StatelessWidget {
                       builder: (context, value, child) {
                         return Button(
                           onPressed: () {
-                            context.read<CartModel>().addToCart(product);
+                            context
+                                .read<CartModel>()
+                                .addToCart(product, context);
                           },
                           text: StringConstants.addToCart,
                         );

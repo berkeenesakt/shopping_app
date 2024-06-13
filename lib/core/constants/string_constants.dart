@@ -3,6 +3,7 @@ class StringConstants {
   static const String hiThere = 'Hi there! 👋\nWelcome to Shopping App! 🛍️';
   static const String productNotInCart = 'Product not found in cart';
   static const String addToCart = 'Add to cart';
+  static const String addedToCart = 'Added to cart';
   static const String removeFromCart = 'Remove';
   static const String cart = 'Cart';
   static const String checkout = 'Checkout';

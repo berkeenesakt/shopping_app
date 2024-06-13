@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:shopping_app/core/constants/string_constants.dart';
 import 'package:shopping_app/product/models/product_model.dart';
 
@@ -11,7 +12,7 @@ class CartModel with ChangeNotifier {
 
   bool done = false;
 
-  void addToCart(ProductModel product) {
+  void addToCart(ProductModel product, BuildContext context) {
     if (_items.any((element) => element.product == product)) {
       final index = _items.indexWhere((element) => element.product == product);
       _items[index] = CartItemModel(
@@ -21,6 +22,23 @@ class CartModel with ChangeNotifier {
     } else {
       _items.add(CartItemModel(product: product, quantity: 1));
     }
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.green,
+        shape: ShapeBorder.lerp(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          1,
+        ),
+        content: Text(StringConstants.addedToCart),
+        duration: Duration(milliseconds: 400),
+      ),
+    );
     notifyListeners();
   }
 
