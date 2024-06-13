@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/core/constants/string_constants.dart';
 import 'package:shopping_app/feature/cart/cart_model.dart';
-import 'package:shopping_app/feature/favorite/favorite_model.dart';
 import 'package:shopping_app/product/models/product_model.dart';
+
+import '../../product/widgets/global/button.dart';
+import '../../product/widgets/global/favorite_button.dart';
 
 class ProductDetailsView extends StatelessWidget {
   final ProductModel product;
@@ -34,38 +36,16 @@ class ProductDetailsView extends StatelessWidget {
                   children: [
                     Consumer(
                       builder: (context, value, child) {
-                        return IconButton(
-                          icon: Icon(
-                            context.watch<FavoriteModel>().isFavorite(product)
-                                ? Icons.favorite
-                                : Icons.favorite_border,
-                            color: context
-                                    .watch<FavoriteModel>()
-                                    .isFavorite(product)
-                                ? Colors.red
-                                : Colors.grey,
-                          ),
-                          onPressed: () {
-                            context
-                                .read<FavoriteModel>()
-                                .toggleFavorite(product);
-                          },
-                        );
+                        return FavoriteButton(product: product);
                       },
                     ),
                     Consumer(
                       builder: (context, value, child) {
-                        return ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red[400],
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                          ),
+                        return Button(
                           onPressed: () {
                             context.read<CartModel>().addToCart(product);
                           },
-                          child: const Text(StringConstants.addToCart),
+                          text: StringConstants.addToCart,
                         );
                       },
                     ),

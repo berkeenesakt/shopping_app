@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:shopping_app/core/constants/string_constants.dart';
 
 import '../cart/cart_view.dart';
 import '../favorite/favorite_view.dart';
@@ -30,15 +31,15 @@ class _MainViewState extends State<MainView> {
         items: [
           SalomonBottomBarItem(
             icon: const Icon(Icons.home),
-            title: const Text('Home'),
+            title: const Text(StringConstants.home),
           ),
           SalomonBottomBarItem(
             icon: const Icon(Icons.favorite),
-            title: const Text('Favorites'),
+            title: const Text(StringConstants.favorite),
           ),
           SalomonBottomBarItem(
             icon: const Icon(Icons.shopping_cart),
-            title: const Text('Cart'),
+            title: const Text(StringConstants.cart),
           ),
         ],
       ),
