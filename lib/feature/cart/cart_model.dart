@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/constants/string_constants.dart';
 import 'package:shopping_app/product/models/product_model.dart';
@@ -35,8 +34,8 @@ class CartModel with ChangeNotifier {
           ),
           1,
         ),
-        content: Text(StringConstants.addedToCart),
-        duration: Duration(milliseconds: 400),
+        content: const Text(StringConstants.addedToCart),
+        duration: const Duration(milliseconds: 400),
       ),
     );
     notifyListeners();
