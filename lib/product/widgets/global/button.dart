@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/string_constants.dart';
-
 class Button extends StatelessWidget {
   const Button({
     super.key,
@@ -22,7 +20,7 @@ class Button extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: const Text(StringConstants.addToCart),
+      child: Text(text),
     );
   }
 }

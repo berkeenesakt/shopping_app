@@ -41,8 +41,8 @@ class HomeView extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: Expanded(child: ProductGridView()),
+            padding: EdgeInsets.all(8.0),
+            child: ProductGridView(),
           ),
           SizedBox(height: 10)
         ],

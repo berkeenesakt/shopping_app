@@ -9,6 +9,8 @@ class CartModel with ChangeNotifier {
 
   List<CartItemModel> get items => _items;
 
+  bool done = false;
+
   void addToCart(ProductModel product) {
     if (_items.any((element) => element.product == product)) {
       final index = _items.indexWhere((element) => element.product == product);
@@ -42,10 +44,12 @@ class CartModel with ChangeNotifier {
   void increaseQuantity(ProductModel product) {
     if (_items.any((element) => element.product == product)) {
       final index = _items.indexWhere((element) => element.product == product);
-      _items[index] = CartItemModel(
-        product: product,
-        quantity: _items[index].quantity + 1,
-      );
+      if (_items[index].quantity < 99) {
+        _items[index] = CartItemModel(
+          product: product,
+          quantity: _items[index].quantity + 1,
+        );
+      }
     } else {
       throw Exception(StringConstants.productNotInCart);
     }
@@ -67,5 +71,24 @@ class CartModel with ChangeNotifier {
       throw Exception(StringConstants.productNotInCart);
     }
     notifyListeners();
+  }
+
+  void checkout() {
+    _items.clear();
+    done = true;
+    notifyListeners();
+  }
+
+  void doneShopping() {
+    done = false;
+    notifyListeners();
+  }
+
+  double totalPrice() {
+    double total = 0;
+    for (final item in _items) {
+      total += item.product.price * item.quantity;
+    }
+    return total;
   }
 }

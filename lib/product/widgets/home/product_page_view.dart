@@ -54,7 +54,7 @@ class _ProductPageViewState extends State<ProductPageView> {
               height: 8,
               width: currentPage == index ? 24 : 8,
               decoration: BoxDecoration(
-                color: currentPage == index ? Colors.blue : Colors.grey,
+                color: currentPage == index ? Colors.red : Colors.grey,
                 borderRadius: BorderRadius.circular(4),
               ),
             );
