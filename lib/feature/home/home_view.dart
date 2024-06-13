@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/core/constants/string_constants.dart';
 
 import 'package:shopping_app/product/widgets/home/product_grid_view.dart';
 
@@ -16,7 +17,7 @@ class HomeView extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(left: 16.0),
               child: Text(
-                "Hi there! 👋\nWelcome to Shopping App! 🛍️",
+                StringConstants.hiThere,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -31,7 +32,7 @@ class HomeView extends StatelessWidget {
             padding: EdgeInsets.only(left: 16.0),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text("Listings",
+              child: Text(StringConstants.listings,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

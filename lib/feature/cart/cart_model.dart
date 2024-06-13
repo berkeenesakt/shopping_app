@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:shopping_app/core/constants/string_constants.dart';
 import 'package:shopping_app/product/models/product_model.dart';
 
 import '../../product/models/cart_item_model.dart';
@@ -33,7 +34,7 @@ class CartModel with ChangeNotifier {
         _items.removeAt(index);
       }
     } else {
-      throw Exception('Product not found in cart');
+      throw Exception(StringConstants.productNotInCart);
     }
     notifyListeners();
   }
@@ -46,7 +47,7 @@ class CartModel with ChangeNotifier {
         quantity: _items[index].quantity + 1,
       );
     } else {
-      throw Exception('Product not found in cart');
+      throw Exception(StringConstants.productNotInCart);
     }
     notifyListeners();
   }
@@ -63,7 +64,7 @@ class CartModel with ChangeNotifier {
         _items.removeAt(index);
       }
     } else {
-      throw Exception('Product not found in cart');
+      throw Exception(StringConstants.productNotInCart);
     }
     notifyListeners();
   }
