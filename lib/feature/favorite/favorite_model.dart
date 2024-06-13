@@ -15,4 +15,16 @@ class FavoriteModel extends ChangeNotifier {
     _favorites.remove(item);
     notifyListeners();
   }
+
+  void toggleFavorite(ProductModel item) {
+    if (_favorites.contains(item)) {
+      removeFromFavorites(item);
+    } else {
+      addToFavorites(item);
+    }
+  }
+
+  bool isFavorite(ProductModel item) {
+    return _favorites.contains(item);
+  }
 }

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/core/constants/string_constants.dart';
+import 'package:shopping_app/feature/cart/cart_model.dart';
+import 'package:shopping_app/feature/favorite/favorite_model.dart';
 import 'package:shopping_app/product/models/product_model.dart';
 
 class ProductDetailsView extends StatelessWidget {
@@ -28,19 +32,42 @@ class ProductDetailsView extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.favorite_border),
+                    Consumer(
+                      builder: (context, value, child) {
+                        return IconButton(
+                          icon: Icon(
+                            context.watch<FavoriteModel>().isFavorite(product)
+                                ? Icons.favorite
+                                : Icons.favorite_border,
+                            color: context
+                                    .watch<FavoriteModel>()
+                                    .isFavorite(product)
+                                ? Colors.red
+                                : Colors.grey,
+                          ),
+                          onPressed: () {
+                            context
+                                .read<FavoriteModel>()
+                                .toggleFavorite(product);
+                          },
+                        );
+                      },
                     ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red[400],
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: const Text('Add to cart'),
+                    Consumer(
+                      builder: (context, value, child) {
+                        return ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red[400],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                          ),
+                          onPressed: () {
+                            context.read<CartModel>().addToCart(product);
+                          },
+                          child: const Text(StringConstants.addToCart),
+                        );
+                      },
                     ),
                   ],
                 )
