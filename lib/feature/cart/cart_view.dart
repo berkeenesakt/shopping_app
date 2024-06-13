@@ -46,7 +46,8 @@ class CartView extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.dark,
-              title: const Text('Cart', style: TextStyle(color: Colors.black)),
+              title: const Text(StringConstants.cart,
+                  style: TextStyle(color: Colors.black)),
             ),
             body: cart.items.isEmpty
                 ? const EmptyCart()

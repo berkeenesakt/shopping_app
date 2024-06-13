@@ -15,6 +15,7 @@ class StringConstants {
   static const String emptyCartSubtitle =
       'Looks like you haven\'t added anything to your cart yet.';
   static const String favorite = 'Favorite';
+  static const String favorites = 'Favorites';
   static const String favoriteEmpty = 'Your favorite list is empty';
   static const String favoriteEmptySubtitle =
       'Looks like you haven\'t added anything to your favorite list yet.';
