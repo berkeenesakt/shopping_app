@@ -7,7 +7,7 @@ List<ProductModel> sampleProducts = [
     image: ImageConstants.macbook.dir,
     name: 'MacBook Pro 16"',
     description: "A powerful notebook with M3 Pro chip",
-    price: 2.499,
+    price: 2499,
   ),
   ProductModel(
     image: ImageConstants.ipadPro.dir,

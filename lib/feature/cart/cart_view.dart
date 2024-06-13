@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/core/constants/string_constants.dart';
 import 'package:shopping_app/product/widgets/global/button.dart';
+import '../../core/extensions/price_parse_extension.dart';
 
 import '../../product/widgets/cart/cart_list_tile.dart';
 import 'cart_model.dart';
@@ -40,15 +41,15 @@ class CartView extends StatelessWidget {
         }
         return Scaffold(
             bottomNavigationBar: cart.items.isEmpty
-                ? SizedBox()
-                : Container(
+                ? const SizedBox()
+                : SizedBox(
                     height: 50,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Total: \$${cart.totalPrice()}',
+                          Text('Total: \$${cart.totalPrice().parsePrice()}',
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,

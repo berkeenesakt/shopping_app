@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/core/constants/string_constants.dart';
+import 'package:shopping_app/core/extensions/price_parse_extension.dart';
 import 'package:shopping_app/feature/cart/cart_model.dart';
 import 'package:shopping_app/product/models/product_model.dart';
 
@@ -25,7 +26,7 @@ class ProductDetailsView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '\$${product.price}',
+                  '\$${product.price.parsePrice()}',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.red[500],

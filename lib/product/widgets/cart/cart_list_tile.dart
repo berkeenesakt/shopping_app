@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/core/extensions/price_parse_extension.dart';
 import 'package:shopping_app/feature/cart/cart_model.dart';
 import 'package:shopping_app/feature/product_details/product_details_view.dart';
 import '../../models/cart_item_model.dart';
@@ -70,7 +71,7 @@ class CartListTile extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      '\$${product.price * cart.quantity}',
+                      '\$${(product.price * cart.quantity).parsePrice()}',
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,

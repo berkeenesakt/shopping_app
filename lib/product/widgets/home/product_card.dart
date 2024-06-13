@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/core/extensions/price_parse_extension.dart';
 import 'package:shopping_app/feature/product_details/product_details_view.dart';
 import 'package:shopping_app/product/models/product_model.dart';
 
@@ -35,7 +36,7 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '\$${product.price}',
+                    '\$${product.price.parsePrice()}',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
