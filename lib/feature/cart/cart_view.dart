@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 
 import 'package:provider/provider.dart';
 import 'package:shopping_app/core/constants/string_constants.dart';
-import 'package:shopping_app/product/widgets/global/button.dart';
-import '../../core/extensions/price_parse_extension.dart';
 
 import '../../product/widgets/cart/cart_list_tile.dart';
+import '../../product/widgets/cart/checkout_bar.dart';
+import '../../product/widgets/cart/empty_cart.dart';
 import 'cart_model.dart';
 
 class CartView extends StatelessWidget {
@@ -40,27 +40,8 @@ class CartView extends StatelessWidget {
           });
         }
         return Scaffold(
-            bottomNavigationBar: cart.items.isEmpty
-                ? const SizedBox()
-                : SizedBox(
-                    height: 50,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Total: \$${cart.totalPrice().parsePrice()}',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              )),
-                          Button(
-                              onPressed: () => cart.checkout(),
-                              text: StringConstants.checkout)
-                        ],
-                      ),
-                    ),
-                  ),
+            bottomNavigationBar:
+                cart.items.isEmpty ? const SizedBox() : CheckoutBar(cart: cart),
             appBar: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
@@ -68,19 +49,7 @@ class CartView extends StatelessWidget {
               title: const Text('Cart', style: TextStyle(color: Colors.black)),
             ),
             body: cart.items.isEmpty
-                ? const Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.shopping_cart, size: 100),
-                        SizedBox(height: 10),
-                        Text(StringConstants.emptyCart,
-                            style: TextStyle(fontSize: 20)),
-                        SizedBox(height: 10),
-                        Text(StringConstants.emptyCartSubtitle),
-                      ],
-                    ),
-                  )
+                ? const EmptyCart()
                 : ListView.builder(
                     itemCount: cart.items.length,
                     itemBuilder: (context, index) {
