@@ -6,6 +6,9 @@ class StringConstants {
   static const String removeFromCart = 'Remove';
   static const String cart = 'Cart';
   static const String checkout = 'Checkout';
+  static const String orderPlaced = 'Order Placed';
+  static const String orderPlacedSubtitle =
+      'Your order has been placed successfully';
   static const String total = 'Total';
   static const String emptyCart = 'Your cart is empty';
   static const String emptyCartSubtitle =
@@ -15,4 +18,5 @@ class StringConstants {
   static const String favoriteEmptySubtitle =
       'Looks like you haven\'t added anything to your favorite list yet.';
   static const String home = 'Home';
+  static const String ok = 'OK';
 }

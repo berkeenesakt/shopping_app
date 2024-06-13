@@ -6,8 +6,15 @@ import 'package:shopping_app/feature/favorite/favorite_model.dart';
 import 'package:shopping_app/feature/main/main_view.dart';
 
 void main() {
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => CartModel()),
-    ChangeNotifierProvider(create: (context) => FavoriteModel()),
-  ], child: const MaterialApp(home: MainView())));
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CartModel()),
+        ChangeNotifierProvider(create: (context) => FavoriteModel()),
+      ],
+      child: MaterialApp(
+        home: const MainView(),
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+        ),
+      )));
 }
