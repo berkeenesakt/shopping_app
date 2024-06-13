@@ -12,10 +12,10 @@ This is a simple shopping app built with Flutter.
 - View favorite items
 
 ## Screenshots
-![Simulator Screenshot - iPhone 15 Pro - 2024-06-13 at 20 26 23](https://github.com/berkeenesakt/shopping_app/assets/81863556/2ddb5d66-5a90-4014-9caf-6b3538349669)
-![Simulator Screenshot - iPhone 15 Pro - 2024-06-13 at 20 26 50](https://github.com/berkeenesakt/shopping_app/assets/81863556/c0345b9d-3830-4b5b-a407-93bbbaddcabf)
-![Simulator Screenshot - iPhone 15 Pro - 2024-06-13 at 20 26 33](https://github.com/berkeenesakt/shopping_app/assets/81863556/c6a13b01-a29e-47ed-a379-c6f0aad51cf4)
-![Simulator Screenshot - iPhone 15 Pro - 2024-06-13 at 20 26 20](https://github.com/berkeenesakt/shopping_app/assets/81863556/e9e6da4f-66da-4fcf-9f41-ab2e5badc7af)
+<img src="https://github.com/berkeenesakt/shopping_app/assets/81863556/2ddb5d66-5a90-4014-9caf-6b3538349669" width="300" height="600">
+<img src="https://github.com/berkeenesakt/shopping_app/assets/81863556/c0345b9d-3830-4b5b-a407-93bbbaddcabf" width="300" height="600">
+<img src="https://github.com/berkeenesakt/shopping_app/assets/81863556/c6a13b01-a29e-47ed-a379-c6f0aad51cf4" width="300" height="600">
+<img src="https://github.com/berkeenesakt/shopping_app/assets/81863556/e9e6da4f-66da-4fcf-9f41-ab2e5badc7af" width="300" height="600">
 
 
 
