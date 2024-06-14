@@ -4,6 +4,7 @@ import 'package:shopping_app/core/constants/string_constants.dart';
 import 'package:shopping_app/core/extensions/price_parse_extension.dart';
 import 'package:shopping_app/feature/cart/cart_model.dart';
 import 'package:shopping_app/product/models/product_model.dart';
+import 'package:shopping_app/product/widgets/cart/cart_item_quantity.dart';
 
 import '../../product/widgets/global/button.dart';
 import '../../product/widgets/global/favorite_button.dart';
@@ -42,14 +43,24 @@ class ProductDetailsView extends StatelessWidget {
                     ),
                     Consumer(
                       builder: (context, value, child) {
-                        return Button(
-                          onPressed: () {
-                            context
-                                .read<CartModel>()
-                                .addToCart(product, context);
-                          },
-                          text: StringConstants.addToCart,
-                        );
+                        final cartModel = context.watch<CartModel>();
+                        return cartModel.contains(product)
+                            ? SizedBox(
+                                width: 120,
+                                height: 40,
+                                child: CartItemQuantity(
+                                    cart: cartModel.items.firstWhere(
+                                        (element) =>
+                                            element.product == product),
+                                    cartModel: cartModel,
+                                    product: product),
+                              )
+                            : Button(
+                                onPressed: () {
+                                  cartModel.addToCart(product, context);
+                                },
+                                text: StringConstants.addToCart,
+                              );
                       },
                     ),
                   ],

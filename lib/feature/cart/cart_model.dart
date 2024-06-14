@@ -101,6 +101,10 @@ class CartModel with ChangeNotifier {
     notifyListeners();
   }
 
+  bool contains(ProductModel product) {
+    return _items.any((element) => element.product == product);
+  }
+
   double totalPrice() {
     double total = 0;
     for (final item in _items) {
